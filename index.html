@@ -2,7 +2,18 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>LISP Machine</title>
+    <title>LISP ECMAchine</title>
+
+    <script src="js/lib/jquery-1.7.1.min.js"></script>
+    <script src="js/lib/jquery.mousewheel-min.js"></script>
+    <script src="js/lib/jquery.terminal.js"></script>
+    <script src="js/lib/es5-shim.min.js"></script>
+
+    <script src="js/environment.js"></script>
+    <script src="js/evaluator.js"></script>
+    <script src="js/os.js"></script>
+
+    <link href="css/jquery.terminal.css" rel="stylesheet"/>
 
     <script>
     jQuery(document).ready(function($) {
@@ -29,8 +40,8 @@
             prompt: 'ecmachine:/ cloud $',
             onInit: function(term) {
                 $('body').css('margin', '0');
-				        $('<div>').attr('id', 'overlays').appendTo('.terminal');
-				        Display.initialize(term);
+                        $('<div>').attr('id', 'overlays').appendTo('.terminal');
+                        Display.initialize(term);
                 OS.initialize();
                 Display.resize();
             },
@@ -44,7 +55,7 @@
 
         $(window).resize(Display.refresh);
     });
-	  </script>
+      </script>
   </head>
 <body>
 </body>
