@@ -1,0 +1,7 @@
+(define (size item)
+        (cond ((file? item) (length (read item)))
+                  ((dir? item) (sum (map size (map (λ (x) (path item x)) (ls item)))))
+                    (else 0)))
+(define (get-name path)
+   (car (reverse (js-apply 'split path '/))))
+(define (kill-all) (map kill (filter (λ (x) (>= x 0)) (map car (processes)))))

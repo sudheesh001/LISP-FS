@@ -1,0 +1,11 @@
+(define (map proc items)
+    (if (null? items)
+        nil
+        (cons (proc (car items))
+            (map proc (cdr items)))))
+(define (filter pred seq)
+      (cond ((null? seq) nil)
+                  ((pred (car seq))
+                   (cons (car seq)
+                                (filter pred (cdr seq))))
+                  (else (filter pred (cdr seq)))))
